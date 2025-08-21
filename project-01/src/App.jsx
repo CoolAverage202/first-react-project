@@ -2,9 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Header from './component/iron/Header.jsx'
-import CoreConcepts from './component/gold/coreConcepts.jsx'
-import { CORE_CONCEPTS } from './component/gold/data.js'
+import Header from './components/iron/Header.jsx'
+import CoreConcepts from './components/gold/coreConcepts.jsx'
+import { CORE_CONCEPTS } from './components/gold/data.js'
  
 function App() {
   const [count, setCount] = useState(0)
@@ -21,19 +21,9 @@ function App() {
             description={CORE_CONCEPTS[0].description}
             image={CORE_CONCEPTS[0].image}
             />
-            <CoreConcepts
-            title={CORE_CONCEPTS[1].title}
-            description={CORE_CONCEPTS[1].description}
-            image={CORE_CONCEPTS[1].image}
-            />
-            <CoreConcepts title={CORE_CONCEPTS[2].title}
-            description={CORE_CONCEPTS[2].description}
-            image={CORE_CONCEPTS[2].image}
-            />
-            <CoreConcepts title={CORE_CONCEPTS[3].title}
-            description={CORE_CONCEPTS[3].description}
-            image={CORE_CONCEPTS[3].image}
-            />
+            <CoreConcepts {...CORE_CONCEPTS[1]}/>
+            <CoreConcepts {...CORE_CONCEPTS[2]}/>
+            <CoreConcepts {...CORE_CONCEPTS[3]}/>
           </ul>
         </section>
         <a href="https://vite.dev" target="_blank">

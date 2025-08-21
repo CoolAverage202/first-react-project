@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import reactlogo from '../../assets/react.svg';
 import '../../App.css'
 function Header() {
