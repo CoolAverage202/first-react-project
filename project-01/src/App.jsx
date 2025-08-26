@@ -5,9 +5,14 @@ import './App.css'
 import Header from './components/iron/Header.jsx'
 import CoreConcepts from './components/gold/coreConcepts.jsx'
 import { CORE_CONCEPTS } from './components/gold/data.js'
+import TabButton from './components/iron/TabButton.jsx'
  
 function App() {
   const [count, setCount] = useState(0)
+  
+  function handleSelect() {
+    console.log('Hello World - Select');
+  }
 
   return (
     <>
@@ -25,6 +30,18 @@ function App() {
             <CoreConcepts {...CORE_CONCEPTS[2]}/>
             <CoreConcepts {...CORE_CONCEPTS[3]}/>
           </ul>
+        </section>
+        {/* // learning about how to react to events in REACT */}
+        <section id="examples">
+          <h2>Examples</h2>
+          {/* giving dynmaic content via the props */}
+          <menu>
+            <TabButton onSelect={handleSelect}>Components</TabButton>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+            <TabButton onSelect={handleSelect}>state</TabButton>
+          </menu>
+          dynamic content 
         </section>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
