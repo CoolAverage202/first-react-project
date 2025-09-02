@@ -9,11 +9,16 @@ import TabButton from './components/iron/TabButton.jsx'
  
 function App() {
   const [count, setCount] = useState(0)
-  
-  function handleSelect() {
-    console.log('Hello World - Select');
-  }
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
 
+  let tabContent = 'Please click a button'
+  
+  function handleSelect(selectedButton) {
+    // selectedButton => "compoenents", "JSX", "Props", "State"
+    tabContent = selectedButton;
+    console.log(tabContent);
+  }
+console.log('app component rendering');
   return (
     <>
       <div>
@@ -36,12 +41,12 @@ function App() {
           <h2>Examples</h2>
           {/* giving dynmaic content via the props */}
           <menu>
-            <TabButton onSelect={handleSelect}>Components</TabButton>
-            <TabButton onSelect={handleSelect}>JSX</TabButton>
-            <TabButton onSelect={handleSelect}>Props</TabButton>
-            <TabButton onSelect={handleSelect}>state</TabButton>
+            <TabButton onSelect={() =>handleSelect('components')}>Components</TabButton>
+            <TabButton onSelect={() =>handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() =>handleSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() =>handleSelect('state')}>state</TabButton>
           </menu>
-          dynamic content 
+          {tabContent}
         </section>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
